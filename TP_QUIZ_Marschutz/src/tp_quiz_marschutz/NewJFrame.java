@@ -19,6 +19,28 @@ public class NewJFrame extends javax.swing.JFrame {
     private int indexQuestionCourante = 0;
     private int scores = 0;
     private int choix = 0;
+    private void afficherquestion(){         
+      question q = tabquestion[indexQuestionCourante]; 
+      intitule_question.setText(q.getintitule());
+      
+    rep1.setText(q.getp1());
+    rep2.setText(q.getp2());
+    rep3.setText(q.getp3());
+    rep4.setText(q.getp4());
+    
+    feedback.setVisible(false);
+    score.setVisible(false);
+    
+    rep1.setEnabled(true);
+    rep2.setEnabled(true);
+    rep3.setEnabled(true);
+    rep4.setEnabled(true);
+    
+    }
+    
+    
+    
+    
     public NewJFrame() {
         initComponents();
         
@@ -34,29 +56,41 @@ public class NewJFrame extends javax.swing.JFrame {
                       "10","200","500","100",4),
         new question ("Quel est la couleur du cheval blanc d'henry 4",
                       "vert","violet","blanc","noir" ,3),
+        
+        
+       
+        
+        
+        
     };
-                
-      question q = tabquestion[indexQuestionCourante]; 
-      intitule_question.setText(q.getintitule());
-      
-    rep1.setText(q.getp1());
-    rep2.setText(q.getp2());
-    rep3.setText(q.getp3());
-    rep4.setText(q.getp4());
     
-    
+     afficherquestion();
     }
-public void verifrep(){
+    
+public void verifrep(int choix){
     
     question q = tabquestion[indexQuestionCourante];
     
     if (choix ==  q.getindex()) {
+        feedback.setVisible(true);
         feedback.setText("Bonne réponse !");
-        scores++;   
+        score.setVisible(true);
+        scores++;
+        score.setText("score ="+scores);  
+        
     } else {
+        feedback.setVisible(true);
+        score.setVisible(true);
         feedback.setText("Mauvaise réponse...");
-    }
-}
+        
+    
+    } 
+    
+        rep1.setEnabled(false);
+        rep2.setEnabled(false);
+        rep3.setEnabled(false);
+        rep4.setEnabled(false);
+}      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,6 +115,8 @@ public void verifrep(){
         intitule_question.setForeground(new java.awt.Color(0, 0, 255));
         intitule_question.setText("Quelle est la capital de la France?");
 
+        rep1.setBackground(new java.awt.Color(102, 255, 255));
+        rep1.setForeground(new java.awt.Color(51, 51, 51));
         rep1.setText("jButton1");
         rep1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +124,7 @@ public void verifrep(){
             }
         });
 
+        rep2.setBackground(new java.awt.Color(0, 255, 255));
         rep2.setText("jButton2");
         rep2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +132,7 @@ public void verifrep(){
             }
         });
 
+        rep3.setBackground(new java.awt.Color(0, 255, 255));
         rep3.setText("jButton3");
         rep3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +140,7 @@ public void verifrep(){
             }
         });
 
+        rep4.setBackground(new java.awt.Color(0, 255, 255));
         rep4.setText("jButton4");
         rep4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,9 +150,15 @@ public void verifrep(){
 
         feedback.setText("jLabel1");
 
+        score.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         score.setText("jLabel1");
 
         question_suiv.setText("jButton1");
+        question_suiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                question_suivActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,26 +168,24 @@ public void verifrep(){
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(question_suiv))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(intitule_question)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(score, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(rep1)
-                                .addGap(29, 29, 29)
-                                .addComponent(rep2)
-                                .addGap(18, 18, 18)
-                                .addComponent(rep3)
-                                .addGap(18, 18, 18)
-                                .addComponent(rep4)))
-                        .addGap(0, 14, Short.MAX_VALUE)))
+                        .addGap(15, 15, 15)
+                        .addComponent(rep1)
+                        .addGap(29, 29, 29)
+                        .addComponent(rep2)
+                        .addGap(18, 18, 18)
+                        .addComponent(rep3)
+                        .addGap(18, 18, 18)
+                        .addComponent(rep4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(intitule_question)
+                        .addGap(25, 25, 25)
+                        .addComponent(score, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -152,7 +195,7 @@ public void verifrep(){
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(intitule_question)
                     .addComponent(score))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rep1)
                     .addComponent(rep2)
@@ -169,20 +212,33 @@ public void verifrep(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void rep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rep1ActionPerformed
-        int choix = 1;
+        
+        verifrep(1);
     }//GEN-LAST:event_rep1ActionPerformed
 
     private void rep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rep2ActionPerformed
-        int choix = 2;
+        
+        verifrep(2);
     }//GEN-LAST:event_rep2ActionPerformed
 
     private void rep3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rep3ActionPerformed
-        int choix = 3;
+        
+        verifrep(3);
     }//GEN-LAST:event_rep3ActionPerformed
 
     private void rep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rep4ActionPerformed
-        int choix = 4;
+
+        verifrep(4);
     }//GEN-LAST:event_rep4ActionPerformed
+
+    private void question_suivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_question_suivActionPerformed
+        indexQuestionCourante++;
+        if (indexQuestionCourante<5){
+            afficherquestion();}    
+        else{
+            score.setText("Quiz fini votre score :"+scores);
+        }
+    }//GEN-LAST:event_question_suivActionPerformed
 
     /**
      * @param args the command line arguments
