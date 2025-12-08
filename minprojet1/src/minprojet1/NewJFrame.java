@@ -12,12 +12,34 @@ public class NewJFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewJFrame.class.getName());
 
-    /**
-     * Creates new form NewJFrame
-     */
+    
+    private cadenas game = new cadenas();
+
+
+    int v1 = 0;
+    int v2 = 0;
+    int v3 = 0;
+    int v4 = 0;
+    
+    
+    private void updateDisplay() {
+    nombre1.setText("" + v1);
+    nombre2.setText("" + v2);
+    nombre3.setText("" + v3);
+    nombre4.setText("" + v4);
+
+    text_score.setText("Tentatives restantes : " + game.getAttemptsLeft());
+}
+
+
+
+
     public NewJFrame() {
         initComponents();
+        updateDisplay();
+        
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -68,12 +90,27 @@ public class NewJFrame extends javax.swing.JFrame {
             getContentPane().add(up1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 70, -1));
 
             up2.setText("/\\");
+                up2.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        up2ActionPerformed(evt);
+                    }
+                });
                 getContentPane().add(up2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 70, -1));
 
                 up3.setText("/\\");
+                    up3.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            up3ActionPerformed(evt);
+                        }
+                    });
                     getContentPane().add(up3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 70, -1));
 
                     up4.setText("/\\");
+                        up4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                up4ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(up4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 70, -1));
 
                         nombre1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -97,6 +134,11 @@ public class NewJFrame extends javax.swing.JFrame {
                         getContentPane().add(nombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 146, 70, 120));
 
                         down1.setText("\\/");
+                        down1.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down1ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 70, -1));
 
                         down2.setText("\\/");
@@ -108,9 +150,19 @@ public class NewJFrame extends javax.swing.JFrame {
                         getContentPane().add(down2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 70, -1));
 
                         down3.setText("\\/");
+                        down3.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down3ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 70, -1));
 
                         down4.setText("\\/");
+                        down4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down4ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 70, -1));
 
                         test.setText("Tester");
@@ -121,26 +173,26 @@ public class NewJFrame extends javax.swing.JFrame {
                         });
                         getContentPane().add(test, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
 
-                        text_exact.setText("jLabel1");
-                        getContentPane().add(text_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
+                        text_exact.setText("nombre exact");
+                        getContentPane().add(text_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 80, -1));
 
                         nombre_exact.setText("jLabel1");
-                        getContentPane().add(nombre_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, -1));
+                        getContentPane().add(nombre_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
 
-                        text_haut.setText("jLabel1");
-                        getContentPane().add(text_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, -1));
+                        text_haut.setText("nombre plus grand");
+                        getContentPane().add(text_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 110, -1));
 
                         nombre_haut.setText("jLabel2");
-                        getContentPane().add(nombre_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, -1, -1));
+                        getContentPane().add(nombre_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, -1, -1));
 
-                        text_bas.setText("jLabel3");
-                        getContentPane().add(text_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
+                        text_bas.setText("nombre plus petit");
+                        getContentPane().add(text_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 110, -1));
 
                         nombre_bas.setText("jLabel4");
-                        getContentPane().add(nombre_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+                        getContentPane().add(nombre_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, -1));
 
                         text_score.setText("jLabel2");
-                        getContentPane().add(text_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+                        getContentPane().add(text_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 140, -1));
 
                         butoon_recommencer.setText("Recommencer");
                         butoon_recommencer.addActionListener(new java.awt.event.ActionListener() {
@@ -154,20 +206,85 @@ public class NewJFrame extends javax.swing.JFrame {
                     }// </editor-fold>//GEN-END:initComponents
 
     private void up1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up1ActionPerformed
-        // TODO add your handling code here:
+         v1 = (v1 + 1) % 10;
+    updateDisplay();
+        
     }//GEN-LAST:event_up1ActionPerformed
 
     private void down2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down2ActionPerformed
-        // TODO add your handling code here:
+        v2 = (v2 + 9) % 10;
+    updateDisplay();
     }//GEN-LAST:event_down2ActionPerformed
 
     private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
-        // TODO add your handling code here:
+        if (game.isGameOver()) {
+        text_intro.setText("La partie est terminée !");
+        return;
+    }
+
+    String guess = "" + v1 + v2 + v3 + v4;
+
+    cadenas.Result r = game.tryGuess(guess);
+
+    // affichage
+    nombre_exact.setText("" + r.exact);
+    nombre_haut.setText("" + r.tooHigh);
+    nombre_bas.setText("" + r.tooLow);
+
+    text_score.setText("Tentatives restantes : " + game.getAttemptsLeft());
+
+    if (r.isWin) {
+        text_intro.setText("Bravo ! Tu as trouvé la combinaison !");
+    } else if (game.isGameOver()) {
+        text_intro.setText("Perdu ! Le code était : " + game.revealSecret());
+    }
+
+
     }//GEN-LAST:event_testActionPerformed
 
     private void butoon_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butoon_recommencerActionPerformed
-        // TODO add your handling code here:
+        game.startNewGame();
+
+    // reset valeurs
+    v1 = v2 = v3 = v4 = 0;
+
+    nombre_exact.setText("0");
+    nombre_haut.setText("0");
+    nombre_bas.setText("0");
+
+    text_intro.setText("Nouvelle partie !");
+    updateDisplay();
     }//GEN-LAST:event_butoon_recommencerActionPerformed
+
+    private void up2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up2ActionPerformed
+        v2 = (v2 + 1) % 10;
+    updateDisplay();
+    }//GEN-LAST:event_up2ActionPerformed
+
+    private void up3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up3ActionPerformed
+       v3 = (v3 + 1) % 10;
+    updateDisplay();
+    }//GEN-LAST:event_up3ActionPerformed
+
+    private void up4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up4ActionPerformed
+        v4 = (v4 + 1) % 10;
+    updateDisplay();
+    }//GEN-LAST:event_up4ActionPerformed
+
+    private void down1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down1ActionPerformed
+        v1 = (v1 + 9) % 10;
+    updateDisplay();
+    }//GEN-LAST:event_down1ActionPerformed
+
+    private void down3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down3ActionPerformed
+        v3 = (v3 + 9) % 10;
+    updateDisplay();
+    }//GEN-LAST:event_down3ActionPerformed
+
+    private void down4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down4ActionPerformed
+        v4 = (v4 + 9) % 10;
+    updateDisplay();
+    }//GEN-LAST:event_down4ActionPerformed
 
     /**
      * @param args the command line arguments
