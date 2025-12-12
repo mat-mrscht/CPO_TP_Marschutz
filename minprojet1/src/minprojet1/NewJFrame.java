@@ -34,6 +34,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
 
 
+
     public NewJFrame() {
         initComponents();
         updateDisplay();
@@ -72,6 +73,7 @@ public class NewJFrame extends javax.swing.JFrame {
         nombre_bas = new javax.swing.JLabel();
         text_score = new javax.swing.JLabel();
         butoon_recommencer = new javax.swing.JButton();
+        btn_joker = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
@@ -88,7 +90,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     up1ActionPerformed(evt);
                 }
             });
-            getContentPane().add(up1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 70, -1));
+            getContentPane().add(up1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 70, -1));
 
             up2.setText("/\\");
                 up2.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +98,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         up2ActionPerformed(evt);
                     }
                 });
-                getContentPane().add(up2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 70, -1));
+                getContentPane().add(up2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 70, -1));
 
                 up3.setText("/\\");
                     up3.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +106,7 @@ public class NewJFrame extends javax.swing.JFrame {
                             up3ActionPerformed(evt);
                         }
                     });
-                    getContentPane().add(up3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 70, -1));
+                    getContentPane().add(up3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 70, -1));
 
                     up4.setText("/\\");
                         up4.addActionListener(new java.awt.event.ActionListener() {
@@ -112,27 +114,27 @@ public class NewJFrame extends javax.swing.JFrame {
                                 up4ActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(up4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 70, -1));
+                        getContentPane().add(up4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 70, -1));
 
                         nombre1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         nombre1.setText("jLabel1");
                         nombre1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-                        getContentPane().add(nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 146, 70, 120));
+                        getContentPane().add(nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 70, 120));
 
                         nombre2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         nombre2.setText("jLabel2");
                         nombre2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-                        getContentPane().add(nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 146, 70, 120));
+                        getContentPane().add(nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 70, 120));
 
                         nombre3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         nombre3.setText("jLabel3");
                         nombre3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-                        getContentPane().add(nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 146, 70, 120));
+                        getContentPane().add(nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 70, 120));
 
                         nombre4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         nombre4.setText("jLabel4");
                         nombre4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-                        getContentPane().add(nombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 146, 70, 120));
+                        getContentPane().add(nombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 70, 120));
 
                         down1.setText("\\/");
                         down1.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +142,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 down1ActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(down1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 70, -1));
+                        getContentPane().add(down1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 70, -1));
 
                         down2.setText("\\/");
                         down2.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +150,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 down2ActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(down2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 70, -1));
+                        getContentPane().add(down2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 70, -1));
 
                         down3.setText("\\/");
                         down3.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +158,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 down3ActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(down3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 70, -1));
+                        getContentPane().add(down3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 70, -1));
 
                         down4.setText("\\/");
                         down4.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +166,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 down4ActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(down4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 70, -1));
+                        getContentPane().add(down4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 70, -1));
 
                         test.setText("Tester");
                         test.addActionListener(new java.awt.event.ActionListener() {
@@ -172,10 +174,10 @@ public class NewJFrame extends javax.swing.JFrame {
                                 testActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(test, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
+                        getContentPane().add(test, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 110, -1));
 
                         text_exact.setText("nombre exact");
-                        getContentPane().add(text_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 80, -1));
+                        getContentPane().add(text_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 100, 20));
 
                         nombre_exact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         nombre_exact.setText("0");
@@ -208,7 +210,17 @@ public class NewJFrame extends javax.swing.JFrame {
                                 butoon_recommencerActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(butoon_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, -1, -1));
+                        getContentPane().add(butoon_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 110, -1));
+
+                        btn_joker.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+                        btn_joker.setForeground(new java.awt.Color(255, 0, 0));
+                        btn_joker.setText("JOKER");
+                        btn_joker.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btn_jokerActionPerformed(evt);
+                            }
+                        });
+                        getContentPane().add(btn_joker, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 120, 70));
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
@@ -255,7 +267,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // reset valeurs
     v1 = v2 = v3 = v4 = 0;
-
+    btn_joker.setEnabled(true);
     nombre_exact.setText("0");
     nombre_haut.setText("0");
     nombre_bas.setText("0");
@@ -294,6 +306,21 @@ public class NewJFrame extends javax.swing.JFrame {
     updateDisplay();
     }//GEN-LAST:event_down4ActionPerformed
 
+    private void btn_jokerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_jokerActionPerformed
+        int valeur = game.utiliserJoker();  // on appelle le joker
+
+    if (valeur == -1) {
+        // joker déjà utilisé
+        text_intro.setText("Joker déjà utilisé !");
+    } else {
+        // joker utilisé avec succès
+        text_intro.setText("JOKER  Un des chiffres du code est : " + valeur);
+
+        // désactiver le bouton pour éviter re-utilisation
+        btn_joker.setEnabled(false);
+    }// TODO add your handling code here:
+    }//GEN-LAST:event_btn_jokerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -320,6 +347,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_joker;
     private javax.swing.JButton butoon_recommencer;
     private javax.swing.JButton down1;
     private javax.swing.JButton down2;
