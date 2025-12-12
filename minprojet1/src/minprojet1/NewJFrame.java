@@ -77,9 +77,10 @@ public class NewJFrame extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        text_intro.setFont(new java.awt.Font("Snap ITC", 0, 18)); // NOI18N
         text_intro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text_intro.setText("SALUT! A toi de trouver le code en 10 tentatives");
-        getContentPane().add(text_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 44, -1, -1));
+        getContentPane().add(text_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
         up1.setText("/\\");
             up1.addActionListener(new java.awt.event.ActionListener() {
@@ -174,25 +175,32 @@ public class NewJFrame extends javax.swing.JFrame {
                         getContentPane().add(test, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
 
                         text_exact.setText("nombre exact");
-                        getContentPane().add(text_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 80, -1));
+                        getContentPane().add(text_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 80, -1));
 
-                        nombre_exact.setText("jLabel1");
-                        getContentPane().add(nombre_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
+                        nombre_exact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        nombre_exact.setText("0");
+                        nombre_exact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                        getContentPane().add(nombre_exact, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 348, 20, 30));
 
-                        text_haut.setText("nombre plus grand");
-                        getContentPane().add(text_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 110, -1));
+                        text_haut.setText("nombre trop grand");
+                        getContentPane().add(text_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 110, -1));
 
-                        nombre_haut.setText("jLabel2");
-                        getContentPane().add(nombre_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, -1, -1));
+                        nombre_haut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        nombre_haut.setText("0");
+                        nombre_haut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                        getContentPane().add(nombre_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 378, 20, 30));
 
-                        text_bas.setText("nombre plus petit");
-                        getContentPane().add(text_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 110, -1));
+                        text_bas.setText("nombre trop petit");
+                        getContentPane().add(text_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 110, -1));
 
-                        nombre_bas.setText("jLabel4");
-                        getContentPane().add(nombre_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, -1));
+                        nombre_bas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        nombre_bas.setText("0");
+                        nombre_bas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                        getContentPane().add(nombre_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 408, 20, 30));
 
+                        text_score.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
                         text_score.setText("jLabel2");
-                        getContentPane().add(text_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 140, -1));
+                        getContentPane().add(text_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 270, -1));
 
                         butoon_recommencer.setText("Recommencer");
                         butoon_recommencer.addActionListener(new java.awt.event.ActionListener() {
